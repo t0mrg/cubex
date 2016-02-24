@@ -1,0 +1,643 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  <meta http-equiv="Content-Language" content="en-gb">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>CubeX - Cubic Exact Solution</title>
+<style>
+p {margin: 8px;}
+</style>
+
+  <script>
+<!--
+function fillform(inputtext)
+{
+var textin = inputtext;
+var values = new Array();
+values = textin.split(',');
+FrontPage_Form1.n1111.value = values[0];
+FrontPage_Form1.n1112.value = values[1];
+FrontPage_Form1.n1122.value = values[2];
+FrontPage_Form1.n1211.value = values[3];
+FrontPage_Form1.n1212.value = values[4];
+FrontPage_Form1.n1222.value = values[5];
+FrontPage_Form1.n2211.value = values[6];
+FrontPage_Form1.n2212.value = values[7];
+FrontPage_Form1.n2222.value = values[8];
+FrontPage_Form1.submit
+}
+-->
+  </script>
+</head>
+
+
+<body style="background-color: rgb(235, 235, 235);">
+<div style="margin: 0 auto; width: 802px; background-color: rgb(255,255,255); text-align: centre; border: 1px solid rgb(187,187,187);">
+<div style="width: 800px; text-align: center;" id="layer1">
+<img style="width: 585px; height: 75px;" alt="" src="cubex-title.jpg"></div>
+
+<div style="border-top: 1px dashed rgb(187, 187, 187); background: rgb(255, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; text-align: center; position: relative; width: 800px; z-index: 1;" id="layer2"><br>
+If you publish work using results from CubeX,
+please cite our <a href="http://www.biomedcentral.com/1471-2105/8/428/abstract">2007
+BMC Bioinformatics paper</a> (see below).<br>
+<br>
+Please enter valid positive integers in all 9 cells.<br>
+
+<!--webbot BOT="GeneratedScript" PREVIEW=" " startspan -->
+<script language="JavaScript" type="text/javascript"><!--
+function FrontPage_Form1_Validator(theForm)
+{
+if (theForm.n1111.value == "")
+{
+alert("Please enter a value for the \"n1111\" field.");
+theForm.n1111.focus();
+return (false);
+}
+if (theForm.n1111.value.length < 1)
+{
+alert("Please enter at least 1 characters in the \"n1111\" field.");
+theForm.n1111.focus();
+return (false);
+}
+if (theForm.n1111.value.length > 10)
+{
+alert("Please enter at most 10 characters in the \"n1111\" field.");
+theForm.n1111.focus();
+return (false);
+}
+var checkOK = "0123456789-";
+var checkStr = theForm.n1111.value;
+var allValid = true;
+var validGroups = true;
+var decPoints = 0;
+var allNum = "";
+for (i = 0; i < checkStr.length; i++)
+{
+ch = checkStr.charAt(i);
+for (j = 0; j < checkOK.length; j++)
+if (ch == checkOK.charAt(j))
+break;
+if (j == checkOK.length)
+{
+allValid = false;
+break;
+}
+allNum += ch;
+}
+if (!allValid)
+{
+alert("Please enter only digit characters in the \"n1111\" field.");
+theForm.n1111.focus();
+return (false);
+}
+var chkVal = allNum;
+var prsVal = parseInt(allNum);
+if (chkVal != "" && !(prsVal >= 0))
+{
+alert("Please enter a value greater than or equal to \"0\" in the \"n1111\" field.");
+theForm.n1111.focus();
+return (false);
+}
+if (theForm.n1112.value == "")
+{
+alert("Please enter a value for the \"n1112\" field.");
+theForm.n1112.focus();
+return (false);
+}
+if (theForm.n1112.value.length < 1)
+{
+alert("Please enter at least 1 characters in the \"n1112\" field.");
+theForm.n1112.focus();
+return (false);
+}
+if (theForm.n1112.value.length > 10)
+{
+alert("Please enter at most 10 characters in the \"n1112\" field.");
+theForm.n1112.focus();
+return (false);
+}
+var checkOK = "0123456789-";
+var checkStr = theForm.n1112.value;
+var allValid = true;
+var validGroups = true;
+var decPoints = 0;
+var allNum = "";
+for (i = 0; i < checkStr.length; i++)
+{
+ch = checkStr.charAt(i);
+for (j = 0; j < checkOK.length; j++)
+if (ch == checkOK.charAt(j))
+break;
+if (j == checkOK.length)
+{
+allValid = false;
+break;
+}
+allNum += ch;
+}
+if (!allValid)
+{
+alert("Please enter only digit characters in the \"n1112\" field.");
+theForm.n1112.focus();
+return (false);
+}
+var chkVal = allNum;
+var prsVal = parseInt(allNum);
+if (chkVal != "" && !(prsVal >= 0))
+{
+alert("Please enter a value greater than or equal to \"0\" in the \"n1112\" field.");
+theForm.n1112.focus();
+return (false);
+}
+if (theForm.n1122.value == "")
+{
+alert("Please enter a value for the \"n1122\" field.");
+theForm.n1122.focus();
+return (false);
+}
+if (theForm.n1122.value.length < 1)
+{
+alert("Please enter at least 1 characters in the \"n1122\" field.");
+theForm.n1122.focus();
+return (false);
+}
+if (theForm.n1122.value.length > 10)
+{
+alert("Please enter at most 10 characters in the \"n1122\" field.");
+theForm.n1122.focus();
+return (false);
+}
+var checkOK = "0123456789-";
+var checkStr = theForm.n1122.value;
+var allValid = true;
+var validGroups = true;
+var decPoints = 0;
+var allNum = "";
+for (i = 0; i < checkStr.length; i++)
+{
+ch = checkStr.charAt(i);
+for (j = 0; j < checkOK.length; j++)
+if (ch == checkOK.charAt(j))
+break;
+if (j == checkOK.length)
+{
+allValid = false;
+break;
+}
+allNum += ch;
+}
+if (!allValid)
+{
+alert("Please enter only digit characters in the \"n1122\" field.");
+theForm.n1122.focus();
+return (false);
+}
+var chkVal = allNum;
+var prsVal = parseInt(allNum);
+if (chkVal != "" && !(prsVal >= 0))
+{
+alert("Please enter a value greater than or equal to \"0\" in the \"n1122\" field.");
+theForm.n1122.focus();
+return (false);
+}
+if (theForm.n1211.value == "")
+{
+alert("Please enter a value for the \"n1211\" field.");
+theForm.n1211.focus();
+return (false);
+}
+if (theForm.n1211.value.length < 1)
+{
+alert("Please enter at least 1 characters in the \"n1211\" field.");
+theForm.n1211.focus();
+return (false);
+}
+if (theForm.n1211.value.length > 10)
+{
+alert("Please enter at most 10 characters in the \"n1211\" field.");
+theForm.n1211.focus();
+return (false);
+}
+var checkOK = "0123456789-";
+var checkStr = theForm.n1211.value;
+var allValid = true;
+var validGroups = true;
+var decPoints = 0;
+var allNum = "";
+for (i = 0; i < checkStr.length; i++)
+{
+ch = checkStr.charAt(i);
+for (j = 0; j < checkOK.length; j++)
+if (ch == checkOK.charAt(j))
+break;
+if (j == checkOK.length)
+{
+allValid = false;
+break;
+}
+allNum += ch;
+}
+if (!allValid)
+{
+alert("Please enter only digit characters in the \"n1211\" field.");
+theForm.n1211.focus();
+return (false);
+}
+var chkVal = allNum;
+var prsVal = parseInt(allNum);
+if (chkVal != "" && !(prsVal >= 0))
+{
+alert("Please enter a value greater than or equal to \"0\" in the \"n1211\" field.");
+theForm.n1211.focus();
+return (false);
+}
+if (theForm.n1212.value == "")
+{
+alert("Please enter a value for the \"n1212\" field.");
+theForm.n1212.focus();
+return (false);
+}
+if (theForm.n1212.value.length < 1)
+{
+alert("Please enter at least 1 characters in the \"n1212\" field.");
+theForm.n1212.focus();
+return (false);
+}
+if (theForm.n1212.value.length > 10)
+{
+alert("Please enter at most 10 characters in the \"n1212\" field.");
+theForm.n1212.focus();
+return (false);
+}
+var checkOK = "0123456789-";
+var checkStr = theForm.n1212.value;
+var allValid = true;
+var validGroups = true;
+var decPoints = 0;
+var allNum = "";
+for (i = 0; i < checkStr.length; i++)
+{
+ch = checkStr.charAt(i);
+for (j = 0; j < checkOK.length; j++)
+if (ch == checkOK.charAt(j))
+break;
+if (j == checkOK.length)
+{
+allValid = false;
+break;
+}
+allNum += ch;
+}
+if (!allValid)
+{
+alert("Please enter only digit characters in the \"n1212\" field.");
+theForm.n1212.focus();
+return (false);
+}
+var chkVal = allNum;
+var prsVal = parseInt(allNum);
+if (chkVal != "" && !(prsVal >= 0))
+{
+alert("Please enter a value greater than or equal to \"0\" in the \"n1212\" field.");
+theForm.n1212.focus();
+return (false);
+}
+if (theForm.n1222.value == "")
+{
+alert("Please enter a value for the \"n1222\" field.");
+theForm.n1222.focus();
+return (false);
+}
+if (theForm.n1222.value.length < 1)
+{
+alert("Please enter at least 1 characters in the \"n1222\" field.");
+theForm.n1222.focus();
+return (false);
+}
+if (theForm.n1222.value.length > 10)
+{
+alert("Please enter at most 10 characters in the \"n1222\" field.");
+theForm.n1222.focus();
+return (false);
+}
+var checkOK = "0123456789-";
+var checkStr = theForm.n1222.value;
+var allValid = true;
+var validGroups = true;
+var decPoints = 0;
+var allNum = "";
+for (i = 0; i < checkStr.length; i++)
+{
+ch = checkStr.charAt(i);
+for (j = 0; j < checkOK.length; j++)
+if (ch == checkOK.charAt(j))
+break;
+if (j == checkOK.length)
+{
+allValid = false;
+break;
+}
+allNum += ch;
+}
+if (!allValid)
+{
+alert("Please enter only digit characters in the \"n1222\" field.");
+theForm.n1222.focus();
+return (false);
+}
+var chkVal = allNum;
+var prsVal = parseInt(allNum);
+if (chkVal != "" && !(prsVal >= 0))
+{
+alert("Please enter a value greater than or equal to \"0\" in the \"n1222\" field.");
+theForm.n1222.focus();
+return (false);
+}
+if (theForm.n2211.value == "")
+{
+alert("Please enter a value for the \"n2211\" field.");
+theForm.n2211.focus();
+return (false);
+}
+if (theForm.n2211.value.length < 1)
+{
+alert("Please enter at least 1 characters in the \"n2211\" field.");
+theForm.n2211.focus();
+return (false);
+}
+if (theForm.n2211.value.length > 10)
+{
+alert("Please enter at most 10 characters in the \"n2211\" field.");
+theForm.n2211.focus();
+return (false);
+}
+var checkOK = "0123456789-";
+var checkStr = theForm.n2211.value;
+var allValid = true;
+var validGroups = true;
+var decPoints = 0;
+var allNum = "";
+for (i = 0; i < checkStr.length; i++)
+{
+ch = checkStr.charAt(i);
+for (j = 0; j < checkOK.length; j++)
+if (ch == checkOK.charAt(j))
+break;
+if (j == checkOK.length)
+{
+allValid = false;
+break;
+}
+allNum += ch;
+}
+if (!allValid)
+{
+alert("Please enter only digit characters in the \"n2211\" field.");
+theForm.n2211.focus();
+return (false);
+}
+var chkVal = allNum;
+var prsVal = parseInt(allNum);
+if (chkVal != "" && !(prsVal >= 0))
+{
+alert("Please enter a value greater than or equal to \"0\" in the \"n2211\" field.");
+theForm.n2211.focus();
+return (false);
+}
+if (theForm.n2212.value == "")
+{
+alert("Please enter a value for the \"n2212\" field.");
+theForm.n2212.focus();
+return (false);
+}
+if (theForm.n2212.value.length < 1)
+{
+alert("Please enter at least 1 characters in the \"n2212\" field.");
+theForm.n2212.focus();
+return (false);
+}
+if (theForm.n2212.value.length > 10)
+{
+alert("Please enter at most 10 characters in the \"n2212\" field.");
+theForm.n2212.focus();
+return (false);
+}
+var checkOK = "0123456789-";
+var checkStr = theForm.n2212.value;
+var allValid = true;
+var validGroups = true;
+var decPoints = 0;
+var allNum = "";
+for (i = 0; i < checkStr.length; i++)
+{
+ch = checkStr.charAt(i);
+for (j = 0; j < checkOK.length; j++)
+if (ch == checkOK.charAt(j))
+break;
+if (j == checkOK.length)
+{
+allValid = false;
+break;
+}
+allNum += ch;
+}
+if (!allValid)
+{
+alert("Please enter only digit characters in the \"n2212\" field.");
+theForm.n2212.focus();
+return (false);
+}
+var chkVal = allNum;
+var prsVal = parseInt(allNum);
+if (chkVal != "" && !(prsVal >= 0))
+{
+alert("Please enter a value greater than or equal to \"0\" in the \"n2212\" field.");
+theForm.n2212.focus();
+return (false);
+}
+if (theForm.n2222.value == "")
+{
+alert("Please enter a value for the \"n2222\" field.");
+theForm.n2222.focus();
+return (false);
+}
+if (theForm.n2222.value.length < 1)
+{
+alert("Please enter at least 1 characters in the \"n2222\" field.");
+theForm.n2222.focus();
+return (false);
+}
+if (theForm.n2222.value.length > 10)
+{
+alert("Please enter at most 10 characters in the \"n2222\" field.");
+theForm.n2222.focus();
+return (false);
+}
+var checkOK = "0123456789-";
+var checkStr = theForm.n2222.value;
+var allValid = true;
+var validGroups = true;
+var decPoints = 0;
+var allNum = "";
+for (i = 0; i < checkStr.length; i++)
+{
+ch = checkStr.charAt(i);
+for (j = 0; j < checkOK.length; j++)
+if (ch == checkOK.charAt(j))
+break;
+if (j == checkOK.length)
+{
+allValid = false;
+break;
+}
+allNum += ch;
+}
+if (!allValid)
+{
+alert("Please enter only digit characters in the \"n2222\" field.");
+theForm.n2222.focus();
+return (false);
+}
+var chkVal = allNum;
+var prsVal = parseInt(allNum);
+if (chkVal != "" && !(prsVal >= 0))
+{
+alert("Please enter a value greater than or equal to \"0\" in the \"n2222\" field.");
+theForm.n2222.focus();
+return (false);
+}
+return (true);
+}
+//--></script>
+<form method="post" action="/cgi-bin/cubex2.py" onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
+  <table style="border: 1px solid rgb(187, 187, 187); width: 400px; text-align: left; margin-left: auto; margin-right: auto;" halign="center" cellspacing="0">
+
+    <tbody>
+
+      <tr>
+
+        <td bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF" colspan="2" rowspan="2" align="center" width="115"> <input value="Submit" name="B1" style="text-align: center;" type="submit"><input value="Reset" name="B2" type="reset"></td>
+
+        <td colspan="3" align="center"><b>SNP
+2</b></td>
+
+      </tr>
+
+      <tr>
+
+        <td align="center">11</td>
+
+        <td align="center">12</td>
+
+        <td align="center">22</td>
+
+      </tr>
+
+      <tr>
+
+        <td rowspan="3" style="width: 80px; text-align: center;"><b>SNP
+1</b></td>
+
+        <td align="center" width="51">11</td>
+
+        <td align="center"><!--webbot bot="Validation" s-data-type="Integer" s-number-separators="x" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="10" s-validation-constraint="Greater than or equal to" s-validation-value="0" -->
+        <input name="n1111" size="8" maxlength="10" style="border: 1px solid rgb(187, 187, 187); text-align: center;" type="text"></td>
+
+        <td bordercolor="#FFFFFF" align="center"><!--webbot bot="Validation" s-data-type="Integer" s-number-separators="x" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="10" s-validation-constraint="Greater than or equal to" s-validation-value="0" -->
+        <input name="n1112" size="8" style="border: 1px solid rgb(187, 187, 187); text-align: center;" type="text"></td>
+
+        <td align="center"><!--webbot bot="Validation" s-data-type="Integer" s-number-separators="x" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="10" s-validation-constraint="Greater than or equal to" s-validation-value="0" -->
+        <input name="n1122" size="8" style="border: 1px solid rgb(187, 187, 187); text-align: center;" type="text"></td>
+
+      </tr>
+
+      <tr>
+
+        <td align="center" width="51">12</td>
+
+        <td align="center"><!--webbot bot="Validation" s-data-type="Integer" s-number-separators="x" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="10" s-validation-constraint="Greater than or equal to" s-validation-value="0" -->
+        <input name="n1211" size="8" style="border: 1px solid rgb(187, 187, 187); text-align: center;" type="text"></td>
+
+        <td align="center"><!--webbot bot="Validation" s-data-type="Integer" s-number-separators="x" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="10" s-validation-constraint="Greater than or equal to" s-validation-value="0" -->
+        <input name="n1212" size="8" style="border: 1px solid rgb(187, 187, 187); text-align: center;" type="text"></td>
+
+        <td align="center"><!--webbot bot="Validation" s-data-type="Integer" s-number-separators="x" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="10" s-validation-constraint="Greater than or equal to" s-validation-value="0" -->
+        <input name="n1222" size="8" style="border: 1px solid rgb(187, 187, 187); text-align: center;" type="text"></td>
+
+      </tr>
+
+      <tr>
+
+        <td align="center" width="51">22</td>
+
+        <td align="center"><!--webbot bot="Validation" s-data-type="Integer" s-number-separators="x" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="10" s-validation-constraint="Greater than or equal to" s-validation-value="0" -->
+        <input name="n2211" size="8" style="border: 1px solid rgb(187, 187, 187); text-align: center;" type="text"></td>
+
+        <td align="center"><!--webbot bot="Validation" s-data-type="Integer" s-number-separators="x" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="10" s-validation-constraint="Greater than or equal to" s-validation-value="0" -->
+        <input name="n2212" size="8" style="border: 1px solid rgb(187, 187, 187); text-align: center;" type="text"></td>
+
+        <td align="center"><!--webbot bot="Validation" s-data-type="Integer" s-number-separators="x" b-value-required="TRUE" i-minimum-length="1" i-maximum-length="10" s-validation-constraint="Greater than or equal to" s-validation-value="0" -->
+        <input name="n2222" size="8" style="border: 1px solid rgb(187, 187, 187); text-align: center;" type="text"></td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+</form>
+
+</div>
+
+<h3 style="border-top: 1px dashed rgb(187, 187, 187); background: rgb(255, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; text-align: center; position: relative; width: 800px; z-index: 1;" id="title1">Instructions</h3>
+
+<p style="width: 800px;">This program calculates haplotype
+frequencies using the exact
+solution to the cubic equation rather than an iterative approach.<br>
+
+Please enter the observed diplotype numbers in the cells of the table
+above, then click submit to analyse. Values should be positive integers.<!--
+p-->
+</p>
+
+<h3 style="border-top: 1px dashed rgb(187, 187, 187); background: rgb(255, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; text-align: center; position: relative; width: 800px; z-index: 1;" id="title1">CubeX for batch use</h3>
+
+<p style="width: 800px;"> <a set="yes" linkindex="1" href="http://www.oege.org/software/cubex/cubex-batch.zip">Click
+here</a>
+to download a version of
+CubeX (Python script) for batch use. This takes diplotype inputs from
+text
+file (one SNP pair per line) and exports xml.<span style="font-weight: bold;"></span></p>
+
+<h3 style="border-top: 1px dashed rgb(187, 187, 187); background: rgb(255, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; text-align: center; position: relative; width: 800px; z-index: 1;" id="title1">
+Copyright and Licence</h3>
+
+<p style="width: 800px;">This program is copyright (2006-7). Use is
+free under the terms of the <a linkindex="2" href="http://www.oege.org/software/cubex/CubeXLicence.pdf">CubeX
+licence</a>, but no liability is accepted for any costs or errors
+incurred by
+use of the software. Any use of the program should be cited in
+publications:&nbsp;</p>
+
+<p style="margin-left: 40px; width: 760px;" align="left">Cubic
+exact solutions for
+the estimation of pairwise haplotype frequencies: implications for
+linkage disequilibrium analyses and a web tool 'CubeX'<br>
+
+Tom R Gaunt, Santiago Rodriguez, Ian NM Day<br>
+
+<a set="yes" linkindex="2" href="http://www.biomedcentral.com/1471-2105/8/428/abstract">BMC
+Bioinformatics 2007, 8:428 (2 November 2007)</a></p>
+
+<p style="width: 800px;">Any user wishing to obtain the code for
+their own use should contact
+<a href="mailto:cubex@oege.org">cubex@oege.org</a>.&nbsp;
+</p>
+
+<p style="width: 800px;"></p>
+
+<!--#include virtual="/cgi-bin/cubexstat.py?home"-->
+</div>
+</body>
+</html>
