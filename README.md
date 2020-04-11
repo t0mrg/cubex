@@ -2,7 +2,7 @@
 
 CubeX is a python CGI and standalone script for the estimation of pairwise haplotype frequncies for biallelic genetic variants. The [original paper in BMC Bioinformatics](http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-428) provides detail on the mathematics underlying this approach.
 
-### [CubeX online webapp](http://apps.biocompute.org.uk/cubex/)
+### [CubeX online webapp](http://apps.biocompute.org.uk/cubex/)
 
 ## Code
 
